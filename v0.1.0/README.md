@@ -1,4 +1,4 @@
-# EG-Stat — Engine Geometry & Statistics
+# EG-Stat — Engine Statistics
 
 **Version 0.1.0**
 **18/1/2026**
