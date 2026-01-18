@@ -3,7 +3,6 @@
 **EG-Stat Version:** 0.1.0
 
 **Manual Version:** 0.1.0
-
 **18/1/2026**
 
 **Author:** Huu Tri (Alvin) Phan (GitHub: K-shii)
