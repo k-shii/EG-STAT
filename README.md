@@ -64,14 +64,13 @@ Each release is documented independently to ensure accuracy and reproducibility.
 
 EG-Stat is under active development.
 
-Current releases are functional, tested, and suitable for:
+Current releases are functional, and suitable for:
 
 * Engineering analysis
 * Design exploration
-* Portfolio demonstration
-* Technical experimentation
+* Files Export
 
-Future development may include improved fuel and load models, expanded vehicle dynamics, and optional visualization or GUI layers.
+Future development may include more fuel type and load models, expanded vehicle dynamics, and optional visualization or GUI layers & graphs.
 
 ---
 
