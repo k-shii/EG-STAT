@@ -85,6 +85,7 @@ When reporting an issue, please include:
 * Command used
 * Relevant input parameters
 * Expected vs actual behavior
+* More features recommendations
 
 📧 **Contact**
 **Huu Tri (Alvin) Phan**
@@ -95,7 +96,3 @@ Email: *alvinphanhuu@gmail.com*
 ## License
 
 MIT License.
-
----
-
-EG-Stat aims to make engine behavior **understandable, explorable, and defensible** — without overstating its scope.
