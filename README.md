@@ -1,7 +1,6 @@
 <p align="center">
   <img src="assets/logo.png" width="140">
 </p>
-
 <h1 align="center">EG-Stat</h1>
 
 **EG-Stat** is an engineering-grade engine and vehicle performance calculator built in Python.
@@ -65,14 +64,13 @@ Each release is documented independently to ensure accuracy and reproducibility.
 
 EG-Stat is under active development.
 
-Current releases are functional, tested, and suitable for:
+Current releases are functional, and suitable for:
 
 * Engineering analysis
 * Design exploration
-* Portfolio demonstration
-* Technical experimentation
+* Files Export
 
-Future development may include improved fuel and load models, expanded vehicle dynamics, and optional visualization or GUI layers.
+Future development may include more fuel type and load models, expanded vehicle dynamics, and optional visualization or GUI layers & graphs.
 
 ---
 
@@ -86,6 +84,7 @@ When reporting an issue, please include:
 * Command used
 * Relevant input parameters
 * Expected vs actual behavior
+* More features recommendations
 
 📧 **Contact**
 **Huu Tri (Alvin) Phan**
@@ -96,7 +95,3 @@ Email: *alvinphanhuu@gmail.com*
 ## License
 
 MIT License.
-
----
-
-EG-Stat aims to make engine behavior **understandable, explorable, and defensible** — without overstating its scope.
