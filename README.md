@@ -1,7 +1,6 @@
 <p align="center">
   <img src="assets/logo.png" width="140">
 </p>
-
 <h1 align="center">EG-Stat</h1>
 
 **EG-Stat** is an engineering-grade engine and vehicle performance calculator built in Python.
