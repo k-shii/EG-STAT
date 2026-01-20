@@ -80,15 +80,9 @@ Where $\theta_\text{cycle}$ is the crank angle (radians) per **power cycle**.
 
 ### 4.1 Crank angle per power cycle
 
-* **4‑stroke:** one power event per cylinder every **2** revolutions
-  $$
-  \theta_\text{cycle} = 4\pi
-  $$
+- **4-stroke:** one power event per cylinder every 2 revolutions: $\theta_{\text{cycle}} = 4\pi$
+- **2-stroke:** one power event per cylinder every 1 revolution: $\theta_{\text{cycle}} = 2\pi$
 
-* **2‑stroke:** one power event per cylinder every **1** revolution
-  $$
-  \theta_\text{cycle} = 2\pi
-  $$
 
 (Internally this is implemented with `revs_per_power` = 2 or 1.)
 
