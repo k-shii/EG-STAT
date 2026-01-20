@@ -3,16 +3,6 @@
 This document lists the core physics and equations used by EG‑Stat.
 
 Goal: transparency. You can reproduce outputs by applying these equations to the same inputs and assumptions.
-
-## Rendering compatibility (GitHub + Mathpix)
-
-* **GitHub:** supports LaTeX-style math in Markdown using `$...$` (inline) and `$$...$$` (block). If math isn’t rendering for you, make sure you’re viewing the rendered file on GitHub (not “Raw”), and keep a blank line before/after block equations.
-* **Guaranteed copy/paste:** for maximum portability, also include each equation’s LaTeX inside a fenced code block (renders as plain text everywhere):
-
-```latex
-P = T\,\omega
-```
-
 ---
 
 ## Conventions and units
