@@ -3,11 +3,13 @@
 </p>
 <h1 align="center">EG-Stat</h1>
 
-**EG-Stat** is an engineering-grade engine and vehicle performance calculator built in Python.
+**EG-Stat** is engine and vehicle performance calculator built in Python.
 
 It is intended for engineers, students, and technically inclined users who want fast, explainable performance estimates.
-
 The project emphasizes correctness, transparency, and long-term maintainability.
+
+<p style="text-align: center;">⚠️The project current state are NOT yet suitable for scientific tool and cannot be expected to provide accurate figures for the purposes of engineering or engine tuning.</p>
+
 
 ---
 
