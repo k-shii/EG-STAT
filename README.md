@@ -26,8 +26,7 @@ EG-Stat is not a replacement for CFD, dyno testing, or OEM simulation suites.
 It is a **decision-support and exploration tool**.
 
 <p align="center">⚠️</p>
-<p align="center">Core physics and Mathematical equations used can be found in <h3>CalcRef.md</h3> file in this Repo root folder.
-</p>
+<p align="center">Core physics and Mathematical equations used can be found in **CalcRef.md** file in this Repo root folder.</p>
 
 ---
 
