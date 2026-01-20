@@ -8,9 +8,9 @@
 It is intended for engineers, students, and technically inclined users who want fast, explainable performance estimates.
 The project emphasizes correctness, transparency, and long-term maintainability.
 
-<p align="center">⚠️ The project current state are NOT yet suitable for scientific tool and cannot be expected to provide accurate calculations for the purposes of engineering or scientific purposes ⚠️</p>
-
-
+<p align="center">⚠️</p>
+<p align="center">The project current state are NOT yet suitable for scientific tool and cannot be expected to provide accurate calculations for the purposes of engineering or scientific purposes.
+</p>
 ---
 
 ## Purpose
