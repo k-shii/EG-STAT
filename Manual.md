@@ -8,6 +8,13 @@
 
 ---
 
+## Compatibility ⚠️
+Menu mode: supported
+Legacy CLI: temporarily unavailable in v0.2.0
+Will return in v0.2.1
+
+---
+
 ## 1. What is EG-Stat?
 
 EG-Stat is a **command-line engine specification and performance analysis tool**.
