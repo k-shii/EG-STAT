@@ -6,6 +6,11 @@ This release marks the first major usability milestone for EG-Stat.
 The core physics and calculation engine remain unchanged from v0.1.x.  
 All improvements in v0.2.0 focus on usability, workflow clarity, and robustness, without altering any engineering results.
 
+### ⚠️ Known issue (v0.2.0): Legacy CLI mode temporarily unavailable
+- The guided menu interface is fully functional and is the recommended way to run EG-Stat v0.2.0.
+- The legacy command-style invocation (e.g., egstat analyze ... / python -m egstat analyze ...) is currently not supported due to the CLI routing overhaul.
+- This only impacts developers / automation workflows, not calculations.
+
 ### Highlights
 - New guided interactive CLI for human-friendly use
 - Clear separation between guided UI and legacy CLI
