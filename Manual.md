@@ -9,9 +9,9 @@
 ---
 
 ## Compatibility ⚠️
-Menu mode: supported
-Legacy CLI: temporarily unavailable in v0.2.0
-Will return in v0.2.1
+- Menu mode: supported
+- Legacy CLI: temporarily unavailable in v0.2.0
+- Will return in v0.2.1
 
 ---
 
