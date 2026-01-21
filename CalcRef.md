@@ -1,4 +1,4 @@
-# EG‑Stat — Physics & Math Reference (v0.2.0)
+# EG‑Stat — Physics & Math Reference
 
 This document lists the core physics and equations used by EG‑Stat.
 
