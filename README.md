@@ -9,7 +9,7 @@ It is intended for engineers, students, and technically inclined users who want 
 The project emphasizes correctness, transparency, and long-term maintainability.
 
 <p align="center">⚠️</p>
-<p align="center">The project current state are NOT yet suitable for scientific tool and cannot be expected to provide accurate calculations for the purposes of engineering or scientific purposes.
+<p align="center">Results are based on simplified physical models and assumptions, and should not replace CFD, dyno testing, or OEM-grade simulation.
 </p>
 ---
 
