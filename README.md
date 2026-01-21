@@ -51,7 +51,7 @@ It is a **decision-support and exploration tool**.
 <p align="center">⚠️</p>
 
 Installation instructions, command usage, configuration details, and worked examples are **version-specific**.
-Please refer to your current running version of the software to look for the correct Manual.
+Please refer to Manual.md in this repository or the matching release asset.
 
 * Installation steps
 * CLI command reference
