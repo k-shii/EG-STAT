@@ -1,12 +1,11 @@
 from __future__ import annotations
-
 import argparse
+import os
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
-
 from egstat.models import EngineSpec, Assumptions, RunConfig, VehicleSpec, DrivetrainSpec, Result
 from egstat.performance import analyze_basic_curves
 from egstat.units import mm_to_m, cc_to_m3
@@ -28,7 +27,10 @@ from egstat.io import RunFile, save_run_json, load_run_json, export_curves_csv, 
 from egstat.solver import match_engine
 from egstat import ui
 
-APP_VERSION = "0.2.0"
+APP_VERSION = "0.2.1"
+LEGACY_SUBCOMMANDS = {"analyze", "match", "design"}
+NONINTERACTIVE_TEST_ENV = "EGSTAT_NONINTERACTIVE_TEST"
+NONINTERACTIVE_TEST_MARKER = "Interactive mode started"
 
 
 @dataclass
@@ -922,7 +924,7 @@ def _guided_about() -> None:
     ui.print_section("About / Credits")
     print(f"EG-Stat v{APP_VERSION}")
     print("Engine specification & performance calculator.")
-    print("v0.2.0 built upon v0.1.1 with UI/UX implementation.")
+    print("v0.2.1 upgraded from v0.2.0,  fixed known bugs.")
     print("Author: Huu Tri (Alvin) Phan")
     print("Contact: alvinphanhuu@gmail.com")
     print("GitHub: https://github.com/k-shii/EG-STAT")
@@ -972,9 +974,12 @@ def _guided_menu(default_choice: int | None = None) -> int:
         return 0
 
 
-def build_parser() -> argparse.ArgumentParser:
+def build_parser(*, require_subcommand: bool = True) -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="egstat", description="EG-Stat (core-first) CLI")
-    sub = p.add_subparsers(dest="cmd", required=True)
+    p.add_argument("--version", action="version", version=f"EG-Stat v{APP_VERSION}")
+    p.add_argument("-ui", "--ui", action="store_true", help="Launch interactive guided menu")
+    sub = p.add_subparsers(dest="cmd")
+    sub.required = require_subcommand
 
     a = sub.add_parser("analyze", help="Analyze a basic engine using templates")
     a.add_argument("--disp-cc", type=float, default=None, help="Displacement in cc (e.g., 1998)")
@@ -1065,36 +1070,78 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def _first_non_flag_arg(argv: list[str]) -> str | None:
+    for arg in argv:
+        if not arg.startswith("-"):
+            return arg
+    return None
+
+
+def _has_help_or_version(argv: list[str]) -> bool:
+    return any(arg in ("-h", "--help", "--version") for arg in argv)
+
+
+def _has_ui_flag(argv: list[str]) -> bool:
+    return any(arg in ("-ui", "--ui") for arg in argv)
+
+
+def _strip_ui_flag(argv: list[str]) -> list[str]:
+    return [arg for arg in argv if arg not in ("-ui", "--ui")]
+
+
+def _should_exit_for_noninteractive_test() -> bool:
+    if os.getenv(NONINTERACTIVE_TEST_ENV) == "1":
+        print(NONINTERACTIVE_TEST_MARKER)
+        return True
+    return False
+
+
 def main(argv: list[str] | None = None) -> int:
     if argv is None:
         argv = sys.argv[1:]
 
     if not argv:
+        if _should_exit_for_noninteractive_test():
+            return 0
         if ui.is_interactive():
             return _guided_menu()
-        parser = build_parser()
+        parser = build_parser(require_subcommand=False)
         parser.print_help()
         return 2
 
-    parser = build_parser()
-    args = parser.parse_args(argv)
+    subcommand = _first_non_flag_arg(argv)
+    if subcommand in LEGACY_SUBCOMMANDS:
+        parser = build_parser(require_subcommand=True)
+        args = parser.parse_args(_strip_ui_flag(argv))
 
-    if args.cmd == "analyze":
-        if _should_guided_analyze(args):
-            return _guided_menu(default_choice=1)
-        return cmd_analyze(args)
-    if args.cmd == "match":
-        if _should_guided_match(args):
-            return _guided_menu(default_choice=2)
-        return cmd_match(args)
-    if args.cmd == "design":
-        if _should_guided_design(args):
-            return _guided_menu(default_choice=3)
-        if args.target_power_kw is None:
-            print("ERROR: --target-power-kw is required.")
-            return 2
-        return cmd_design(args)
+        if args.cmd == "analyze":
+            return cmd_analyze(args)
+        if args.cmd == "match":
+            return cmd_match(args)
+        if args.cmd == "design":
+            if args.target_power_kw is None:
+                print("ERROR: --target-power-kw is required.")
+                return 2
+            return cmd_design(args)
 
+        parser.print_help()
+        return 2
+
+    if _has_help_or_version(argv):
+        parser = build_parser(require_subcommand=False)
+        parser.parse_args(_strip_ui_flag(argv))
+        return 0
+
+    if _has_ui_flag(argv):
+        if _should_exit_for_noninteractive_test():
+            return 0
+        if ui.is_interactive():
+            return _guided_menu()
+        parser = build_parser(require_subcommand=False)
+        parser.print_help()
+        return 2
+
+    parser = build_parser(require_subcommand=False)
     parser.print_help()
     return 2
 

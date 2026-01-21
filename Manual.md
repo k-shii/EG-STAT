@@ -1,17 +1,10 @@
-# EG-Stat Manual — Version 0.2.0
+# EG-Stat Manual — Version 0.2.1
 
-**EG-Stat Version:** 0.2.0
-**Manual Version:** 0.2.0
-**Date:** 21 Jan 2026
+**EG-Stat Version:** 0.2.1
+**Manual Version:** 0.2.1
+**Date:** 22 Jan 2026
 **Author:** Huu Tri (Alvin) Phan
 **License:** MIT
-
----
-
-## Compatibility ⚠️
-- Menu mode: supported
-- Legacy CLI: temporarily unavailable in v0.2.0
-- Will return in v0.2.1
 
 ---
 
@@ -25,8 +18,7 @@ It is designed to:
 * clearly expose assumptions and inferred values
 * work both **interactively (guided UI)** and **non-interactively (legacy CLI)**
 
-The calculation core is unchanged from v0.1.x. Version **0.2.0 focuses on usability**.
-
+The calculation core is unchanged from v0.1.x. Version
 ---
 
 ## 2. How to Start EG-Stat (Important)
@@ -59,6 +51,11 @@ It is **not** how you normally run EG-Stat.
 ```
 python -m egstat.cli
 ```
+or
+```
+egstat -ui
+```
+(if EG-Stat is installed as a console command)
 
 This starts the **actual command-line interface**.
 
@@ -75,6 +72,10 @@ This is the correct entry point for almost all users.
 
 ```
 python -m egstat.cli
+```
+or
+```
+egstat -ui
 ```
 
 When run with no arguments and a TTY is detected, EG-Stat enters **guided mode**:
@@ -96,16 +97,23 @@ egstat
 You may run any mode directly without the UI:
 
 ```
-python -m egstat.cli analyze ...
-python -m egstat.cli match ...
-python -m egstat.cli design ...
+egstat analyze ...
+egstat match ...
+egstat design ...
 ```
 
+or equivalently:
+
+```
+python -m egstat analyze ...
+python -m egstat match ...
+python -m egstat design ...
+```
 In this case:
 
 * the guided UI is skipped
 * EG-Stat behaves exactly like v0.1.x
-* suitable for scripts, automation, and batch runs
+* suitable for scripts, automation, and batch runs or dev purposes
 
 ---
 
@@ -128,6 +136,16 @@ python -m egstat.cli design --help
 All legacy flags remain supported.
 
 ---
+
+### 2.6 Installation Note (Console Command)
+
+After cloning the repository and activating a virtual environment, run:
+```
+python -m pip install -e .
+```
+This installs the `egstat` console command.
+Without this step, use the `python -m egstat ...` or `python -m egstat.cli` entry points instead.
+
 
 ---
 
@@ -329,13 +347,13 @@ All flags from v0.1.x remain valid.
 * **BMEP**: average cylinder pressure representing engine output intensity
 * **BSFC**: fuel efficiency (lower is better)
 * **VE profile**: shape of the torque curve
-* **Cruise fuel**: estimated using a fixed 20 kW load (v0.2.0 limitation)
+* **Cruise fuel**: estimated using a fixed 20 kW load
 
 You do not need to understand these to use EG-Stat, but they explain the results.
 
 ---
 
-## 11. Known Limitations (v0.2.0)
+## 11. Known Limitations
 
 * Cruise fuel is a fixed‑load estimate (not speed‑dependent)
 * No graphical plots (ASCII only)
@@ -345,7 +363,7 @@ You do not need to understand these to use EG-Stat, but they explain the results
 
 ## 12. About
 
-**EG-Stat v0.2.0**
+**EG-Stat v0.2.1**
 
 Engine specification & performance calculator.
 

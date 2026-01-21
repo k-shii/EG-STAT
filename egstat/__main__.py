@@ -1,9 +1,10 @@
-from . import __version__
+import sys
+from .cli import main as cli_main
 
 
-def main() -> None:
-    print(f"EG-Stat core loaded (v{__version__})")
+def main() -> int:
+    return cli_main(sys.argv[1:])
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

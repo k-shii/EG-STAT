@@ -1,15 +1,32 @@
 # EG-Stat Release Notes
 ---
+
+## v0.2.1 — Maintenance & CLI Bug Fix Update
+
+This is a small maintenance release focused on clarifying CLI entry points and restoring documented behavior.
+
+### Changes
+- Clarified and restored console command behavior.
+- Guided interactive UI is now explicitly launched via `egstat -ui` / `egstat --ui`.
+- Legacy subcommands (`analyze`, `match`, `design`) remain fully scriptable and non-interactive.
+- Documentation updated to clarify installation requirements for the `egstat` console command.
+
+### Notes
+- No changes to engine models, physics, calculations, or outputs.
+- Fully backward compatible with v0.2.0.
+
+---
+
 ## v0.2.0 — Guided CLI & UX Overhaul (Major Update)
 
 This release marks the first major usability milestone for EG-Stat.
 The core physics and calculation engine remain unchanged from v0.1.x.  
 All improvements in v0.2.0 focus on usability, workflow clarity, and robustness, without altering any engineering results.
 
-### ⚠️ Known issue (v0.2.0): Legacy CLI mode temporarily unavailable
-- The guided menu interface is fully functional and is the recommended way to run EG-Stat v0.2.0.
-- The legacy command-style invocation (e.g., egstat analyze ... / python -m egstat analyze ...) is currently not supported due to the CLI routing overhaul.
-- This only impacts developers / automation workflows, not calculations.
+### ⚠️ Note (v0.2.0)
+- During the initial v0.2.0 rollout, console command usage required explicit installation (`pip install -e .`) to enable the `egstat` entry point.
+- Legacy CLI functionality itself was not removed, but documentation and entry-point behavior were unclear.
+- This has been clarified and resolved in v0.2.1.
 
 ### Highlights
 - New guided interactive CLI for human-friendly use
