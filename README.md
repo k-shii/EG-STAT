@@ -14,7 +14,6 @@ The project emphasizes correctness, transparency, and long-term maintainability.
 ---
 
 ## Purpose
-
 EG-Stat exists to:
 
 * Analyze internal combustion engine specifications
@@ -31,7 +30,6 @@ It is a **decision-support and exploration tool**.
 ---
 
 ## Design Philosophy
-
 * **Engineering-first**
   BMEP-based modeling, VE templates, and load-aware calculations
 
@@ -50,10 +48,10 @@ It is a **decision-support and exploration tool**.
 ---
 
 ## Documentation & Usage
+<p align="center">⚠️</p>
 
 Installation instructions, command usage, configuration details, and worked examples are **version-specific**.
-
-Please refer to the appropriate **version manual** located in the `docs/` directory for:
+Please refer to your current running version of the software to look for the correct Manual.
 
 * Installation steps
 * CLI command reference
@@ -69,14 +67,6 @@ Each release is documented independently to ensure accuracy and reproducibility.
 
 EG-Stat is under active development.
 
-Current releases are functional, and suitable for:
-
-* Engineering analysis
-* Design exploration
-* Files Export
-
-Future development may include more fuel type and load models, expanded vehicle dynamics, and optional visualization or GUI layers & graphs.
-
 ---
 
 ## Bug Reports & Requests
@@ -84,7 +74,6 @@ Future development may include more fuel type and load models, expanded vehicle 
 Bug reports, feature requests, and technical questions are welcome.
 
 When reporting an issue, please include:
-
 * EG-Stat version
 * Command used
 * Relevant input parameters
@@ -98,5 +87,4 @@ Email: *alvinphanhuu@gmail.com*
 ---
 
 ## License
-
 MIT License.
